@@ -17,7 +17,7 @@
       display: inline-block;
       margin: 10px;
       padding: 12px 24px;
-      background: #25D366; /* verde oficial do WhatsApp */
+      background: #25D366;
       color: white;
       text-decoration: none;
       border-radius: 8px;
@@ -26,10 +26,12 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       transition: transform 0.2s ease;
     }
-    .contact a:hover {
-      transform: scale(1.05);
-    }
+    .contact a:hover { transform: scale(1.05); }
     .map { width: 100%; height: 300px; margin-top: 20px; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px; }
+    .gallery-item { width: 45%; text-align: center; }
+    .gallery-item img { width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .gallery-item p { margin-top: 10px; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -40,6 +42,7 @@
       <a href="#servicos">Serviços</a>
       <a href="#sobre">Sobre</a>
       <a href="#avaliacoes">Avaliações</a>
+      <a href="#galeria">Fotos</a>
       <a href="#localizacao">Localização</a>
       <a href="#contato">Contato</a>
     </nav>
@@ -74,18 +77,39 @@
     <p>Ambiente familiar, equipe experiente, atendimento rápido e local seguro. Confiança e agilidade para você voltar à estrada sem preocupação.</p>
   </section>
 
-  <!-- Avaliações do Google com Elfsight -->
   <section class="section" id="avaliacoes" style="background-color:#f9f9f9;">
     <script src="https://static.elfsight.com/platform/platform.js" async></script>
     <div class="elfsight-app-de3897f3-4e98-4eba-8b05-728213275419" data-elfsight-app-lazy></div>
   </section>
 
+  <section class="section" id="galeria">
+    <h2>Nossa Estrutura</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="foto1.jpeg" alt="Fachada da loja">
+        <p>Fachada da loja</p>
+      </div>
+      <div class="gallery-item">
+        <img src="foto2.jpeg" alt="Dono realizando atendimento">
+        <p>Atendimento no local</p>
+      </div>
+      <div class="gallery-item">
+        <img src="foto3.jpeg" alt="Resgate com moto">
+        <p>Resgate com moto</p>
+      </div>
+      <div class="gallery-item">
+        <img src="foto4.jpeg" alt="Troca de óleo de moto">
+        <p>Troca de óleo de moto</p>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="localizacao">
     <h2>Localização</h2>
     <p>📍 R. Luís Maroni, 775 - Res. Alvorada, Birigui - SP</p>
-<p>🗓️ Aberto todos os dias!</p>
-<p>⏰ Seg. a Sáb.: 6h30 às 19h45</p>
-<p>⏰ Domingos: 7h às 12h</p>
+    <p>🗓️ Aberto todos os dias!</p>
+    <p>⏰ Seg. a Sáb.: 6h30 às 19h45</p>
+    <p>⏰ Domingos: 7h às 12h</p>
     <div class="map">
       <iframe src="https://www.google.com/maps?q=R.+Lu%C3%ADs+Maroni,+775+-+Res.+Alvorada,+Birigui+-+SP&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
