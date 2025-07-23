@@ -1,37 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Didha Borracharia</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background-color: #222; color: #fff; padding: 20px; text-align: center; }
-    nav a { color: #fff; margin: 0 15px; text-decoration: none; }
-    .hero { background-color: #f4f4f4; padding: 50px 20px; text-align: center; }
-    .hero h1 { margin: 0; font-size: 2.5em; }
-    .section { padding: 40px 20px; max-width: 1000px; margin: auto; }
-    .section h2 { border-bottom: 2px solid #222; padding-bottom: 10px; }
-    .services li { margin-bottom: 10px; }
+    header, footer {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      display: inline-block;
+      padding: 5px 10px;
+    }
+    .hero {
+      background-color: #f4f4f4;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .section {
+      padding: 30px 15px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h2 {
+      border-bottom: 2px solid #222;
+      padding-bottom: 10px;
+      font-size: 1.5em;
+    }
+    .services li {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
     .contact a {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
+      margin: 8px;
+      padding: 12px 20px;
       background: #25D366;
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 1em;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       transition: transform 0.2s ease;
     }
-    .contact a:hover { transform: scale(1.05); }
-    .map { width: 100%; height: 300px; margin-top: 20px; }
-    .gallery { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px; }
-    .gallery-item { width: 45%; text-align: center; }
-    .gallery-item img { width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .gallery-item p { margin-top: 10px; font-weight: bold; }
+    .contact a:hover {
+      transform: scale(1.05);
+    }
+    .map {
+      width: 100%;
+      height: 300px;
+      margin-top: 20px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .gallery-item {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+    .gallery-item img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .gallery-item p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    /* Botão flutuante do WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      font-size: 24px;
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.5em; }
+      nav a { display: block; margin: 8px 0; }
+      .contact a { font-size: 1em; padding: 10px 16px; }
+    }
   </style>
 </head>
 <body>
@@ -73,7 +145,7 @@
 
   <section class="section" id="sobre">
     <h2>Sobre Nós</h2>
-    <p>Há 27 anos cuidando da sua segurança nas estradas, a Didha Borracharia em Birigui é especializada em vulcanização de pneus, venda de pneus novos e remold para motos, carros e veículos em geral, além de pneus usados em ótimo estado. Oferecemos serviços como reparos em pneus, corte e remendos com macarrão, troca de bicos de pneus sem câmara, troca de óleo para motos e troca de freios (pastilhas, lonas e patins). Realizamos atendimento emergencial, com socorro de pneus e busca na residência a partir das 7h. Se você procura uma borracharia confiável em Birigui, a Didha Borracharia oferece serviços rápidos e de qualidade para sua moto ou carro.</p>
+    <p>Há 27 anos cuidando da sua segurança nas estradas, a Didha Borracharia em Birigui é especializada em vulcanização de pneus, venda de pneus novos e remold para motos, carros e veículos em geral, além de pneus usados em ótimo estado. Oferecemos serviços como reparos em pneus, corte e remendos com macarrão, troca de bicos de pneus sem câmara, troca de óleo para motos e troca de freios (pastilhas, lonas e patins). Realizamos atendimento emergencial, com socorro de pneus e busca na residência a partir das 7h.</p>
     <p>Ambiente familiar, equipe experiente, atendimento rápido e local seguro. Confiança e agilidade para você voltar à estrada sem preocupação.</p>
   </section>
 
@@ -123,25 +195,10 @@
     </div>
   </section>
 
+  <a href="https://wa.me/5518997477947" class="whatsapp-float" target="_blank">💬</a>
+
   <footer>
     <p>© 2025 Didha Borracharia - Todos os direitos reservados</p>
   </footer>
-  <!-- Botão flutuante do WhatsApp -->
-<a href="https://wa.me/5518997477947" target="_blank" style="
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  border-radius: 50%;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  font-size: 24px;
-  z-index: 999;
-  text-decoration: none;
-">
-  💬
-</a>
-  
 </body>
 </html>
