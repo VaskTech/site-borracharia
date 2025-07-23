@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Didha Borracharia</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
@@ -63,28 +64,47 @@
       height: 300px;
       margin-top: 20px;
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .gallery-item {
-      width: 100%;
-      max-width: 420px;
-      text-align: center;
-    }
-    .gallery-item img {
-      width: 100%;
+
+    /* Carrossel */
+    .carousel-container {
+      position: relative;
+      max-width: 600px;
+      margin: 30px auto;
+      overflow: hidden;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .gallery-item p {
-      margin-top: 10px;
-      font-weight: bold;
+    .carousel-slide {
+      display: none;
+      text-align: center;
     }
-    /* Botão flutuante do WhatsApp */
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+    }
+    .carousel-caption {
+      padding: 10px;
+      font-weight: bold;
+      background: #000000a0;
+      color: white;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 24px;
+      padding: 8px;
+      background: #00000070;
+      border-radius: 50%;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -104,7 +124,30 @@
       nav a { display: block; margin: 8px 0; }
       .contact a { font-size: 1em; padding: 10px 16px; }
     }
-  </style>
+  
+    /* Efeitos modernos */
+    a, button {
+      transition: all 0.3s ease-in-out;
+    }
+    .contact a:hover, .whatsapp-float:hover {
+      background-color: #1ebe5b;
+      transform: scale(1.07);
+    }
+    .carousel-slide {
+      transition: opacity 0.6s ease-in-out;
+    }
+    .carousel-caption {
+      transition: background 0.3s ease;
+    }
+    .carousel-slide img:hover {
+      filter: brightness(0.95);
+    }
+    .prev:hover, .next:hover {
+      background: #25D366;
+      color: #fff;
+    }
+    
+</style>
 </head>
 <body>
   <header>
@@ -145,7 +188,7 @@
 
   <section class="section" id="sobre">
     <h2>Sobre Nós</h2>
-    <p>Há 27 anos cuidando da sua segurança nas estradas, a Didha Borracharia em Birigui é especializada em vulcanização de pneus, venda de pneus novos e remold para motos, carros e veículos em geral, além de pneus usados em ótimo estado. Oferecemos serviços como reparos em pneus, corte e remendos com macarrão, troca de bicos de pneus sem câmara, troca de óleo para motos e troca de freios (pastilhas, lonas e patins). Realizamos atendimento emergencial, com socorro de pneus e busca na residência a partir das 7h.</p>
+    <p>Há 27 anos cuidando da sua segurança nas estradas, a Didha Borracharia em Birigui é especializada em vulcanização de pneus, venda de pneus novos e remold para motos, carros e veículos em geral, além de pneus usados em ótimo estado.</p>
     <p>Ambiente familiar, equipe experiente, atendimento rápido e local seguro. Confiança e agilidade para você voltar à estrada sem preocupação.</p>
   </section>
 
@@ -156,23 +199,26 @@
 
   <section class="section" id="galeria">
     <h2>Nossa Estrutura</h2>
-    <div class="gallery">
-      <div class="gallery-item">
+    <div class="carousel-container">
+      <div class="carousel-slide">
         <img src="foto1.jpeg" alt="Fachada da loja">
-        <p>Fachada da loja</p>
+        <div class="carousel-caption">Fachada da loja</div>
       </div>
-      <div class="gallery-item">
-        <img src="foto2.jpeg" alt="Dono realizando atendimento">
-        <p>Atendimento no local</p>
+      <div class="carousel-slide">
+        <img src="foto2.jpeg" alt="Atendimento no local">
+        <div class="carousel-caption">Atendimento no local</div>
       </div>
-      <div class="gallery-item">
+      <div class="carousel-slide">
         <img src="foto3.jpeg" alt="Resgate com moto">
-        <p>Resgate com moto</p>
+        <div class="carousel-caption">Resgate com moto</div>
       </div>
-      <div class="gallery-item">
+      <div class="carousel-slide">
         <img src="foto4.jpeg" alt="Troca de óleo de moto">
-        <p>Troca de óleo de moto</p>
+        <div class="carousel-caption">Troca de óleo de moto</div>
       </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
     </div>
   </section>
 
@@ -200,5 +246,29 @@
   <footer>
     <p>© 2025 Didha Borracharia - Todos os direitos reservados</p>
   </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("carousel-slide");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000); // muda a cada 4 segundos
+    }
+
+    function plusSlides(n) {
+      slideIndex += n - 1;
+      if (slideIndex < 0) slideIndex = slides.length - 1;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      showSlides();
+    }
+
+    showSlides();
+  </script>
 </body>
 </html>
